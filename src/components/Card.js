@@ -11,6 +11,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 4px 16px -2px #555;
 `
 
 export const Card = ({ question }) => (
