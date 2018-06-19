@@ -14,8 +14,8 @@ const Container = styled.div`
   box-shadow: 0px 4px 16px -2px #555;
 `
 
-export const Card = ({ question }) => (
-  <Container>
+export const Card = ({ question, ...props }) => (
+  <Container {...props}>
     <h1>{question.text}</h1>
   </Container>
 )

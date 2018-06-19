@@ -13,23 +13,36 @@ export class StoreProvider extends React.Component {
     currentQuestion: 1,
     questions: [
       {
+        id: 1,
         text: '1. first question'
       },
       {
+        id: 2,
         text: '2. second question'
       },
       {
+        id: 3,
         text: '3. third question'
       },
       {
+        id: 4,
         text: '4. fourth question'
+      },
+      {
+        id: 5,
+        text: '5. fifth question'
+      },
+      {
+        id: 6,
+        text: '6. sixth question'
       }
     ]
   }
 
   stateReducer = (state, action) => {
     if (action === actions.previousQuestion) {
-      if (state.currentQuestion === 0) {
+      const isFirstQuestion = state.currentQuestion === 0
+      if (isFirstQuestion) {
         return state
       }
 
@@ -37,7 +50,8 @@ export class StoreProvider extends React.Component {
     }
 
     if (action === actions.nextQuestion) {
-      if (state.currentQuestion === state.questions.length - 1) {
+      const isLastQuestion = state.currentQuestion === state.questions.length - 1
+      if (isLastQuestion) {
         return state
       }
 
