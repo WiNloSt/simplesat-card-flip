@@ -12,10 +12,18 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 16px -2px #555;
+
+  ${props =>
+    props.inactive
+      ? `
+    visibility: hidden;
+    opacity: 0;
+  `
+      : ''};
 `
 
 export const Card = ({ question, ...props }) => (
-  <Container {...props}>
+  <Container inactive={question === null} {...props}>
     <h1>{question.text}</h1>
   </Container>
 )
