@@ -1,21 +1,42 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import styled, { injectGlobal } from 'styled-components'
+import { Header } from './components/Header'
+import { Body } from './components/Body'
+import { StoreProvider } from './store'
+
+injectGlobal`
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: Lato;
+    background: #0badc9;
+  }
+`
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <StoreProvider>
+        <Container>
+          <Header />
+          <Body />
+        </Container>
+      </StoreProvider>
+    )
   }
 }
 
-export default App;
+export default App
