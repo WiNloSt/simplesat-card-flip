@@ -71,14 +71,18 @@ const TransitionContainer = styled(TransitionGroup)`
   @keyframes ekaExit {
     to {
       opacity: 0;
-      transform: translate3d(-150%, 150%, 0) rotate3d(0, 0, 1, -20deg);
+      /* transform: translate3d(-150%, 100%, 0) rotate3d(0, 0, 1, -50deg); */
+      /* transform: translate3d(-150%, 150%, 0) rotate3d(0, 0, 1, -20deg); */
+      transform: translate3d(150%, -80%, 0) rotate3d(0, 0, 1, 40deg);
     }
   }
 
   @keyframes ekaEnter {
     from {
       opacity: 0;
-      transform: translate3d(-150%, 150%, 0) rotate3d(0, 0, 1, -20deg);
+      /* transform: translate3d(-150%, 100%, 0) rotate3d(0, 0, 1, -50deg); */
+      /* transform: translate3d(-150%, 150%, 0) rotate3d(0, 0, 1, -20deg); */
+      transform: translate3d(150%, -80%, 0) rotate3d(0, 0, 1, 40deg);
     }
 
     to {
